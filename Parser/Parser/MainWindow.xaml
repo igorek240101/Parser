@@ -1,0 +1,55 @@
+﻿<Window x:Class="Parser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1200">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TabControl Name="workSpace" Grid.Row="1" Grid.Column="1">
+            <TabItem>
+                <TabItem.Header>
+                    <Label MouseLeftButtonDown="Label_MouseLeftButtonDown">
+                        Читать данные
+                    </Label>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="150"/>
+                        </Grid.RowDefinitions>
+                        <TreeView Grid.Row="0" x:Name="view" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 50, 50, 50" Background="Transparent" BorderBrush="Transparent">
+                        </TreeView>
+                        <Button Grid.Row="1" x:Name="Left" Width="50" Height="50" Margin="50, 0, 0, 50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Left_Click"/>
+                        <Button Grid.Row="1" x:Name="Right" Width="50" Height="50" Margin="0, 0, 50, 50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Right_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Label MouseLeftButtonDown="AddBtn_Click">
+                        Обновить данные
+                    </Label>
+                </TabItem.Header>
+                <ScrollViewer>
+                    <StackPanel>
+                        <Label x:Name="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,50,50">
+                        </Label>
+                        <TreeView x:Name="Result" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,50,50" Background="Transparent" BorderBrush="Transparent" >
+                        </TreeView>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
